@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>搜狗大行动</title>
+    <meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"/>
+    <script type="text/javascript">
+        ~(function(dw){
+            var winW;
+            winW=document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+            var flag = "onorientationchange" in window,
+            event = flag ? "orientationchange" : "resize";
+            window.addEventListener("resize", function () {
+               // if (flag) {
+                    if (Math.abs(window.orientation) === 90) {
+                        winW=document.documentElement.clientWidth;
+                        document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+                        //->横屏
+                        layer.open({
+                            content: '请竖屏访问！',
+                            style: style,
+                            shadeClose: false
+                        });
+                    } else {
+                        //->竖屏                        
+                        winW=document.documentElement.clientWidth;
+                        document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+                        layer.closeAll();
+                    }
+                //}
+            }, false);
+        })(750);
+    </script>
+    <script src="{{ url_for('static',filename='js/jquery.min.js')}}"></script>
+    <link type="text/css" href="{{ url_for('static',filename='css/sgdxd.css')}}" rel="stylesheet">
+
+</head>
+<body>
+<div class="contents">
+<div class="sg_ban01">
+    <ul class="sg_jl_ul">
+        <li class="jl_lf"><div class="lf_gzwz"> <img src="{{ url_for('static',filename='images/sgdxd/sg_gzwz.png')}}"></div></li>
+        <li class="jl_rg"><a href="../ucenter/"><div class="rg_gzwz"> <img src="{{ url_for('static',filename='images/sgdxd/sg_jpcx.png')}}"></div></a></li>
+    </ul>
+</div>
+<div class="sg_ban02"></div>
+<div class="sg_ban03">
+    <div class="sg_box item_box">
+        <div class="sg_pmjs"><div class="sg_js01"><a href="../ggl/xptj.html"><img src="{{ url_for('static',filename='images/sgdxd/sg_pmjs01.png')}}"></a></div></div>
+        <div class="sg_b01"><img src="{{ url_for('static',filename='images/sgdxd/sg_g01.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_01.jpg')}}"></div> </div>
+        <div class="sg_b02"><img src="{{ url_for('static',filename='images/sgdxd/sg_g02.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_02.jpg')}}"></div> </div>
+        <div class="sg_b03"><img src="{{ url_for('static',filename='images/sgdxd/sg_g03.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_03.jpg')}}"></div> </div>
+        <div class="sg_b04"><img src="{{ url_for('static',filename='images/sgdxd/sg_g04.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_04.jpg')}}"></div> </div>
+        <div class="sg_b05"><img src="{{ url_for('static',filename='images/sgdxd/sg_g05.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_05.jpg')}}"></div> </div>
+        <div class="sg_b06"><img src="{{ url_for('static',filename='images/sgdxd/sg_g06.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_06.jpg')}}"></div> </div>
+        <div class="sg_b07"><img src="{{ url_for('static',filename='images/sgdxd/sg_g07.png')}}"><div class="sg_dw01 item" data-rel="{{ url_for('static',filename='images/sgdxd/ticket_07.jpg')}}"></div> </div>
+    </div>
+    <div class="sg_sy_01">剩余<span class="play_count"></span>次机会</div>
+    <div class="sg_start"></div>
+    <div class="gz" style="display: none">
+        <div class="gz_bg">
+            <img src="{{ url_for('static',filename='images/sgdxd/gz_gb.png')}}" alt="" class="gz_gb">
+            <ul class="yjjx">
+                <li class="gz_active" id="tk_hdgz">活动规则</li>
+                <li id="tk_jlgz">奖励规则</li>
+            </ul>
+            <div class="tk_gz tk_hdgz">
+                <p><span>1.</span>每个用户每天可获得一张年俗图片；</p>
+                <p><span>2.</span>游戏时间60秒，60秒内将图片中隐藏的狗票全部找出后可有机会获得话费奖励；</p>
+                <p><span>3.</span>每个用户每天可参与3次；</p>
+                <p><span>4.</span> 凡以不正当手段（如恶意刷单、作弊、实施网络攻击等）参与本次活动的用户，福彩刮刮乐有权终止其参与活动，并取消其所获奖励。</p>
+            </div>
+            <div class="tk_gz tk_jlgz" style="display: none;">
+                <p><span>1.</span>60秒内将图片中隐藏的狗票全部找出后可有机会获得话费奖励；</p>
+                <p><span>2.</span>奖励话费在24小时内直接充值至用户在福彩刮刮乐微信绑定手机号中。</p>
+            </div>
+        </div>
+    </div>
+    <div class="sg_ban04"></div>
+</div>
+<div class="sg_ban06" style="display: none;"><img style="width: 100%;height: 100%" src="{{ url_for('static',filename='images/sgdxd/sum_bad.png')}}"></div>
+</div>
+<div class="sg_ban05"></div>
+<script src="{{ url_for('static',filename='js/layer/layer.m.js')}}"></script>
+<script src="{{ url_for('static',filename='js/public.js')}}"></script>
+<script src="{{ url_for('static',filename='js/sgdxd.js')}}"></script>
+<script src="{{ url_for('static',filename='js/jq-lightBox.js')}}"></script>
+<script src="{{ url_for('static',filename='js/WeixinApi.js')}}"></script>
+<script type="text/javascript">
+    $(function(){
+        sg.imgUrl = "{{ basedir }}";
+        sg.act = "index";
+        sg.init();
+    });
+</script>
+</body>
+</html>

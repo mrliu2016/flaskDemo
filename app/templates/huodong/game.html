@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+	<title>搜狗大行动</title>
+	<meta name="x5-orientation" content="portrait">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
+    <meta http-equiv="Cache-Control" content="max-age=0">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta content="telephone=no" name="format-detection">
+    <script type="text/javascript">
+        ~(function(dw){
+            var winW;
+            winW=document.documentElement.clientWidth;
+            document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+            var flag = "onorientationchange" in window,
+            event = flag ? "orientationchange" : "resize";
+            window.addEventListener("resize", function () {
+               // if (flag) {
+                    if (Math.abs(window.orientation) === 90) {
+                        winW=document.documentElement.clientWidth;
+                        document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+                        clearInterval(_gameTime);
+                        //->横屏
+                        layer.open({
+                            content: '请竖屏访问！',
+                            style: style,
+                            shadeClose: false
+                        });
+                    } else {
+                        //->竖屏                        
+                        winW=document.documentElement.clientWidth;
+                        document.documentElement.style.fontSize = (winW /dw * 100)+"px";
+                        if ($(".dog_count").html() != $(".word_count").html()) {
+                       		_gameTime = setInterval(sg.gameTime, 10);
+                        }
+                        layer.closeAll();
+                    }
+                //}
+            }, false);
+        })(750);
+    </script>
+    </script>
+    <link href="<{$H_CSS_URL}>/sgdxd.css?v=<{$VERSION}>" type="text/css" rel="stylesheet">
+</head>
+<body>
+	<div class="container">
+		<div class="box_top">
+			<img class="bg_01" src="<{$H_IMAGES_URL}>/sgdxd/bg_01.jpg">
+			<div class="time_box">
+				<span class="time_down">00'00''</span>
+			</div>		
+			<div class="record_box">
+				<p class="total_gp">下图中共有<span class="dog_count"></span>张狗票</p>
+				<p class="yet_gp">您已找到<span class="yet_num word_count">0</span>张</p>
+			</div>
+		</div>
+		<div class="box_bottom">
+			<img class="bg_02" src="<{$H_IMAGES_URL}>/sgdxd/bg_02.jpg">
+			<div class="gp_box">
+				<img class="zgp_img">
+			</div>	
+			<div class="new_year click_box click_box_1" style="display: none;">
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+			</div>
+			<div class="temple_fair click_box click_box_2" style="display: none;">
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+			</div>
+			<div class="new_year_call click_box click_box_3" style="display: none;">
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+				<div class="item on"></div>
+			</div>
+		</div>
+		<div class="sg_ban06" style="display: none;"><img style="width: 100%;height: 100%" src="<{$H_IMAGES_URL}>/sgdxd/sum_bad_game.png"></div>
+	</div>
+	<div class="tk_bg tkchb" style="display: none;">
+        <div class="chb">
+            <div class="btn_chb">
+                <img src="<{$H_IMAGES_URL}>/sgdxd/pass.png" class="bt_chb">
+	            <div class="pass_again pass_again_btn">
+	            	<img src="<{$H_IMAGES_URL}>/sgdxd/again.png">
+	            </div>	
+            </div>
+
+        </div>
+    </div>
+	<div class="tk_bg1 tkchb" style="display: none;">
+        <div class="chb">
+            <div class="btn_chb">
+                <img src="<{$H_IMAGES_URL}>/sgdxd/no_pass.png" class="bt_chb">
+	            <div class="pass_again pass_again_btn">
+	            	<img src="<{$H_IMAGES_URL}>/sgdxd/again.png">
+	            </div>	
+            </div>
+
+        </div>
+    </div>
+	<div class="tk_bg2 tkchb" style="display: none;">
+        <div class="chb">
+            <div class="btn_chb">
+                <img src="<{$H_IMAGES_URL}>/sgdxd/cell_money.png" class="bt_chb">
+                <img src="<{$H_IMAGES_URL}>/sgdxd/50.png" class="money_sum">
+	            <div class="pass_again">
+	            	<img class="pass_again_btn" src="<{$H_IMAGES_URL}>/sgdxd/money_again.png">
+	            	<a href="../ucenter/"><img class="pass_back" src="<{$H_IMAGES_URL}>/sgdxd/money_back.png"></a>
+	            </div>	
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript" src="<{$H_JS_URL}>/jquery-1.7.2.min.js"></script>
+    <script type="text/javascript" src="<{$H_JS_URL}>/jq-lightBox.js"></script>
+	<script type="text/javascript" src="<{$H_JS_URL}>/sgdxd.min.js?v=<{$VERSION}>"></script>
+	<script type="text/javascript" src="<{$H_JS_URL}>/layer/layer.m.js"></script>
+	<script type="text/javascript" src="<{$H_JS_URL}>/public.js"></script>
+	<script type="text/javascript" src="<{$H_JS_URL}>/WeixinApi.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			sg.imgUrl = "<{$H_IMAGES_URL}>";
+			sg.act = "game";
+			sg.init();
+		});
+	</script>
+</body>
+</html>
